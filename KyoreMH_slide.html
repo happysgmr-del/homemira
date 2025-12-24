@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고려인 동포 생활 실태와 정착 지원 방안</title>
+    
+    <!-- Reveal.js & Plugins -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css" id="theme">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Glassmorphism CSS -->
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --primary-accent: #00d2ff;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Noto Sans KR', sans-serif !important;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Card Style for Slides */
+        .reveal .slides section.glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            padding: 40px;
+            text-align: left;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: var(--text-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+
+        .reveal p, .reveal li, .reveal td {
+            color: #eee;
+            font-weight: 300;
+            line-height: 1.6;
+            font-size: 28px;
+        }
+
+        .highlight {
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        /* Chart Containers */
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Floating Shapes for Background Atmosphere */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .shape-1 { top: -10%; left: -10%; width: 300px; height: 300px; background: #ff00cc; }
+        .shape-2 { bottom: -10%; right: -10%; width: 400px; height: 400px; background: #3333ff; }
+
+        /* Table Styling */
+        .reveal table {
+            font-size: 0.7em;
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .reveal th { background: rgba(255,255,255,0.1); color: var(--primary-accent); }
+        .reveal td { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body>
+    
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- 1. 타이틀 -->
+            <section class="glass-card" data-transition="zoom">
+                <h1 style="font-size: 2.5em; text-align: center;">고려인 동포 생활 실태와<br>정착 지원 방안</h1>
+                <h3 style="text-align: center; color: var(--primary-accent); margin-top: 30px;">경기도 및 서울 거주자 중심 연구</h3>
+                <p style="text-align: center; margin-top: 50px; font-size: 1.2em;">
+                    <i class="fas fa-calendar-alt"></i> 2025년 기준 분석<br>
+                    <span style="font-size: 0.8em; opacity: 0.8;">제작: 정책연구팀</span>
+                </p>
+            </section>
+
+            <!-- 2. 연구 배경 -->
+            <section class="glass-card">
+                <h2>1. 연구 배경 및 정의</h2>
+                <hr>
+                <ul>
+                    <li class="fragment fade-up"><i class="fas fa-history"></i> <b>역사적 배경:</b> 1860년 연해주 이주 ~ 1937년 강제 이주</li>
+                    <li class="fragment fade-up"><i class="fas fa-passport"></i> <b>고려인 정의:</b> 구소련 지역 거주 한민족 및 직계비속</li>
+                    <li class="fragment fade-up"><i class="fas fa-plane-arrival"></i> <b>유입 증가:</b> 2007년 방문취업제(H-2) 이후 급증</li>
+                    <li class="fragment fade-up"><i class="fas fa-map-marker-alt"></i> <b>경기도 집중:</b> 안산, 화성 등 집거지 형성</li>
+                </ul>
+                <div class="fragment" style="margin-top: 20px; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+                    <small>"단순 외국인 노동자가 아닌, 역사적 아픔을 공유한 <strong>동포</strong>로서의 사회 통합이 목적"</small>
+                </div>
+            </section>
+
+            <!-- 3. 국내 체류 현황 (차트) -->
+            <section class="glass-card">
+                <h2>2. 고려인 인구 급증 추이</h2>
+                <div class="chart-container">
+                    <canvas id="populationChart"></canvas>
+                </div>
+                <p style="font-size: 0.8em; text-align: center; margin-top: 10px;">
+                    * 2012년 1.7만 명 → 2019년 7.4만 명 (약 4.3배 증가)
+                </p>
+            </section>
+
+            <!-- 4. 법적 근거 -->
+            <section class="glass-card">
+                <h2>3. 법적 근거 및 조례</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>주요 내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fragment">
+                            <td><b>고려인동포법</b></td>
+                            <td>체류 자격 취득 및 정착 지원의 기본법</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td><b>재외동포법 시행령</b></td>
+                            <td>고려인 4세까지 동포 범위 확대 (가족 체류 보장)</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td><b>지자체 조례</b></td>
+                            <td>광주(최초), 경기(보건/교육), 안산(지원센터)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="fragment" style="margin-top: 20px; color: #ff9f43;">
+                    <i class="fas fa-exclamation-triangle"></i> <b>한계:</b> 귀화자 및 국적 취득 후손에 대한 지원 근거 미비
+                </p>
+            </section>
+
+            <!-- 5. 주거 실태 (차트) -->
+            <section class="glass-card">
+                <h2>4. 취약한 주거 환경</h2>
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="width: 60%;">
+                        <canvas id="housingChart"></canvas>
+                    </div>
+                    <div style="width: 35%; display: flex; flex-direction: column; justify-content: center;">
+                        <ul style="font-size: 0.8em;">
+                            <li class="fragment highlight-red"><b>월세 거주:</b> 92.5%</li>
+                            <li class="fragment highlight-red"><b>자가 소유:</b> 1.3%</li>
+                            <li class="fragment">보증금은 낮고 월세는 높은 <br><b>'빈곤형 주거'</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. 자녀 양육 및 교육 -->
+            <section class="glass-card">
+                <h2>5. 자녀 양육의 딜레마</h2>
+                <div class="r-stack">
+                    <div class="fragment fade-out" data-fragment-index="0">
+                        <h3 style="color: var(--primary-accent);">자녀 동반 가구 72.5%</h3>
+                        <p>그러나...</p>
+                    </div>
+                    <div class="fragment current-visible" data-fragment-index="0">
+                        <ul>
+                            <li><i class="fas fa-language"></i> <b>언어 장벽:</b> 가정 내 러시아어 사용(92.5%)</li>
+                            <li><i class="fas fa-coins"></i> <b>경제적 부담:</b> 양육비 부족 1순위</li>
+                            <li><i class="fas fa-school"></i> <b>학교 부적응:</b> 중도 입국 자녀 따돌림</li>
+                        </ul>
+                    </div>
+                    <div class="fragment">
+                        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px;">
+                            <h4>가장 시급한 지원?</h4>
+                            <h1 style="color: #fdbb2d;">한국어 교육 (79.9%)</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. 경제 활동 (차트) -->
+            <section class="glass-card">
+                <h2>6. 경제 활동 및 소득</h2>
+                <div class="chart-container" style="height: 350px;">
+                    <canvas id="incomeChart"></canvas>
+                </div>
+                <p class="fragment" style="font-size: 0.7em; text-align: center;">
+                    * 57.6%가 단순 노무직 종사 | 월평균 가구 소득 316만 원 (실질 빈곤)
+                </p>
+            </section>
+
+            <!-- 8. 건강 및 의료 -->
+            <section class="glass-card">
+                <h2>7. 건강권과 의료 접근성</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="fragment fade-right">
+                        <h4><i class="fas fa-hospital-user"></i> 병원 미이용 이유</h4>
+                        <ol style="font-size: 0.8em;">
+                            <li>의사소통 어려움 (21%)</li>
+                            <li>운영 시간 부적절 (19%)</li>
+                            <li>병원비 부담 (16%)</li>
+                        </ol>
+                    </div>
+                    <div class="fragment fade-left">
+                        <h4><i class="fas fa-notes-medical"></i> 주요 문제</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>건강보험 지역가입자 부담 과중</li>
+                            <li>이주 트라우마 및 우울증</li>
+                            <li>의료 사각지대 (무보험 10.7%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. 사회적 관계 (차트) -->
+            <section class="glass-card">
+                <h2>8. 사회적 고립과 갈등</h2>
+                <div class="chart-container">
+                    <canvas id="socialRadarChart"></canvas>
+                </div>
+                <p style="text-align: center; font-size: 0.7em;">
+                    한국인 친구 비율 12.6% 불과 | <b>언어 문제</b>가 갈등의 핵심
+                </p>
+            </section>
+
+            <!-- 10. 지원 서비스 요구 -->
+            <section class="glass-card">
+                <h2>9. 필요한 지원 서비스 (1순위)</h2>
+                <div style="display: flex; align-items: flex-end; height: 300px; gap: 20px;">
+                    <div class="fragment" style="width: 15%; height: 20%; background: #fff; opacity: 0.3;">기타</div>
+                    <div class="fragment" style="width: 15%; height: 30%; background: #00d2ff; opacity: 0.6;">의료</div>
+                    <div class="fragment" style="width: 15%; height: 40%; background: #00d2ff; opacity: 0.8;">취업</div>
+                    <div class="fragment" style="width: 15%; height: 50%; background: #00d2ff;">비자</div>
+                    <div class="fragment" style="width: 40%; height: 90%; background: #fdbb2d; color: #000; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5em;">
+                        한국어<br>교육<br>(61.1%)
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. 해외 사례 -->
+            <section class="glass-card">
+                <h2>10. 해외 사례 (독일 vs 일본)</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div class="fragment glass-card" style="padding: 20px; background: rgba(0,0,0,0.2);">
+                        <h4>🇩🇪 독일</h4>
+                        <ul style="font-size: 0.6em;">
+                            <li><b>역사적 책임:</b> 전쟁 피해 동포 인정</li>
+                            <li><b>시민권 부여:</b> 입국 즉시 권리 보장</li>
+                            <li><b>자격 인정법:</b> 해외 기술 자격 인정</li>
+                        </ul>
+                    </div>
+                    <div class="fragment glass-card" style="padding: 20px; background: rgba(0,0,0,0.2);">
+                        <h4>🇯🇵 일본</h4>
+                        <ul style="font-size: 0.6em;">
+                            <li><b>지역 공생:</b> 지자체 중심 지원</li>
+                            <li><b>아동 교육:</b> 취학률 100% 작전</li>
+                            <li><b>다문화:</b> 하마마쓰 모델 정립</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. 노동 및 법률 -->
+            <section class="glass-card">
+                <h2>11. 노동 권리 구제 매뉴얼</h2>
+                <ul>
+                    <li class="fragment"><i class="fas fa-check-circle"></i> <b>퇴직금:</b> 5인 미만 사업장도 1년 이상 근무 시 지급</li>
+                    <li class="fragment"><i class="fas fa-check-circle"></i> <b>임금 체불:</b> 노동청 진정 → 체불 확정 → 소액체당금</li>
+                    <li class="fragment"><i class="fas fa-check-circle"></i> <b>산업재해:</b> 미등록 체류자도 보상 청구 가능</li>
+                </ul>
+                <div class="fragment" style="margin-top: 30px; border-left: 5px solid red; padding-left: 20px;">
+                    <p style="font-size: 0.8em;">"언어 문제로 권리를 포기하지 않도록 <b>법률 통역 지원</b> 필수"</p>
+                </div>
+            </section>
+
+            <!-- 13. 정신 건강 -->
+            <section class="glass-card">
+                <h2>12. 정신건강 지원 모델</h2>
+                <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 50px;">
+                    <div class="fragment fade-up" style="text-align: center;">
+                        <i class="fas fa-plane-departure fa-3x" style="color: #aaa;"></i>
+                        <p style="font-size: 0.6em;">입국 초기<br>(트라우마 사정)</p>
+                    </div>
+                    <div class="fragment fade-right"><i class="fas fa-arrow-right"></i></div>
+                    <div class="fragment fade-up" style="text-align: center;">
+                        <i class="fas fa-hands-helping fa-3x" style="color: var(--primary-accent);"></i>
+                        <p style="font-size: 0.6em;">지역 안착<br>(사례 관리/상담)</p>
+                    </div>
+                    <div class="fragment fade-right"><i class="fas fa-arrow-right"></i></div>
+                    <div class="fragment fade-up" style="text-align: center;">
+                        <i class="fas fa-heartbeat fa-3x" style="color: #ff6b6b;"></i>
+                        <p style="font-size: 0.6em;">위기 개입<br>(치료/긴급지원)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 14. 이주 여성 -->
+            <section class="glass-card">
+                <h2>13. 이주여성 보호 및 가족 안정</h2>
+                <ul>
+                    <li class="fragment"><b>F-6(결혼이민) 체류권:</b> 이혼 후에도 귀책사유 입증 시 체류 가능</li>
+                    <li class="fragment"><b>가정폭력:</b> 112 신고 시 통보 유예 제도 활용</li>
+                    <li class="fragment"><b>한부모 가정:</b> 양육비 이행 명령 및 소송 지원</li>
+                </ul>
+                <p style="margin-top: 30px; font-size: 0.8em; color: #ffd32a;">
+                    <i class="fas fa-shield-alt"></i> 여성이 안전해야 가족이 정착합니다.
+                </p>
+            </section>
+
+            <!-- 15. 생활 법률 (주거/금융) -->
+            <section class="glass-card">
+                <h2>14. 생활 법률: 사기 예방</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px;">
+                        <h4>🏠 주거 (전월세)</h4>
+                        <ul style="font-size: 0.6em;">
+                            <li>전입신고 + 확정일자 필수</li>
+                            <li>보증금 미반환 시 '임차권등기'</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px;">
+                        <h4>💰 금융 (명의도용)</h4>
+                        <ul style="font-size: 0.6em;">
+                            <li>통장/폰 명의 대여 절대 금지</li>
+                            <li>착오 송금 시 반환 청구 소송</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 16. 청소년 교육 -->
+            <section class="glass-card">
+                <h2>15. 고려인 청소년 진로 지원</h2>
+                <p>한국 사회의 미래 인재, <b>고려인 4세</b></p>
+                <hr>
+                <ul>
+                    <li class="fragment"><b>Bridge Course:</b> 공교육 진입 전 한국어 집중 교육</li>
+                    <li class="fragment"><b>이중 언어 강점:</b> 러시아어 + 한국어 = 북방 교류 전문가</li>
+                    <li class="fragment"><b>대학 입시:</b> 재외국민 전형 및 기술 자격 취득 정보 제공</li>
+                </ul>
+            </section>
+
+            <!-- 17. 상호 문화 교류 -->
+            <section class="glass-card">
+                <h2>16. 상호 문화 인식 개선</h2>
+                <div style="text-align: center;">
+                    <h3 class="fragment fade-in-then-semi-out">"가난한 외국인 노동자?" (X)</h3>
+                    <h1 class="fragment highlight-red" style="margin: 20px 0;">"역사를 공유한 가족" (O)</h1>
+                </div>
+                <ul style="margin-top: 30px;">
+                    <li class="fragment">독립운동가 후손 인식 확산 캠페인</li>
+                    <li class="fragment">지역 축제 및 러시아 문화 체험 확대</li>
+                    <li class="fragment">선주민 대상 다문화 감수성 교육</li>
+                </ul>
+            </section>
+
+            <!-- 18. 지자체 우수 사례 -->
+            <section class="glass-card">
+                <h2>17. 지자체 우수 사례</h2>
+                <table style="font-size: 0.6em;">
+                    <tr>
+                        <td class="highlight">안산시</td>
+                        <td>고려인 문화센터('너머') 위탁 운영, 전국 최대 공동체</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">광주광역시</td>
+                        <td>'고려인마을' 조성, 미디어센터 및 어린이집 자치 운영</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">인천 연수구</td>
+                        <td>함박마을 다문화 서포터즈, 민관 협력 치안 강화</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 20px; font-size: 0.7em;">
+                    ➡ 각 지역 특성에 맞는 <b>맞춤형 조례와 거점 센터</b> 필요
+                </p>
+            </section>
+
+            <!-- 19. 교통 및 안전 -->
+            <section class="glass-card">
+                <h2>18. 교통 안전 및 생활 수칙</h2>
+                <div style="display: flex; justify-content: space-around;">
+                    <div class="fragment" style="text-align: center;">
+                        <i class="fas fa-car-crash fa-3x" style="color: #ff4757;"></i>
+                        <p style="font-size: 0.6em;">대포차 근절<br>(형사 처벌/추방)</p>
+                    </div>
+                    <div class="fragment" style="text-align: center;">
+                        <i class="fas fa-id-card fa-3x" style="color: #2ed573;"></i>
+                        <p style="font-size: 0.6em;">면허 교환<br>(국제면허 확인)</p>
+                    </div>
+                    <div class="fragment" style="text-align: center;">
+                        <i class="fas fa-file-contract fa-3x" style="color: #ffa502;"></i>
+                        <p style="font-size: 0.6em;">종합보험 가입<br>(경제적 파산 방지)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 20. 정책 제언 및 결론 -->
+            <section class="glass-card">
+                <h2>19. 정책 제언 및 과제</h2>
+                <ol>
+                    <li class="fragment"><b>법적 지위:</b> 영주권 요건 완화 및 의료급여 확대</li>
+                    <li class="fragment"><b>가족 정주:</b> 아동 보육료 지원 및 교육 평등권 보장</li>
+                    <li class="fragment"><b>통합 센터:</b> 원스톱 서비스(법률/노무/생활) 구축</li>
+                </ol>
+            </section>
+
+            <!-- 21. 마무리 -->
+            <section class="glass-card" data-background-gradient="linear-gradient(to bottom right, #2C3E50, #4CA1AF)">
+                <h1>감사합니다</h1>
+                <h3 style="margin-top: 40px;">"80년의 유랑을 끝내고,<br>이제는 따뜻한 이웃으로"</h3>
+                <p style="margin-top: 50px; font-size: 0.7em;">
+                    문의: 정책 연구소 (02-123-4567)
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Script Imports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <script>
+        // Reveal.js Initialize
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+            backgroundTransition: 'zoom'
+        });
+
+        // Chart.js Configuration
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: 'white', font: { size: 14 } } }
+            },
+            scales: {
+                x: { ticks: { color: '#ddd' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                y: { ticks: { color: '#ddd' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+            }
+        };
+
+        // 1. Population Chart
+        new Chart(document.getElementById('populationChart'), {
+            type: 'line',
+            data: {
+                labels: ['2012년', '2015년', '2018년', '2019년'],
+                datasets: [{
+                    label: '국내 거주 고려인 (명)',
+                    data: [17652, 32270, 70451, 74111],
+                    borderColor: '#00d2ff',
+                    backgroundColor: 'rgba(0, 210, 255, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6
+                }]
+            },
+            options: commonOptions
+        });
+
+        // 2. Housing Chart
+        new Chart(document.getElementById('housingChart'), {
+            type: 'bar',
+            data: {
+                labels: ['보증금 (만원)', '월세 (만원)'],
+                datasets: [
+                    { label: '고려인', data: [431, 43], backgroundColor: '#ff6b6b' },
+                    { label: '경기도 평균', data: [2918, 33], backgroundColor: '#feca57' }
+                ]
+            },
+            options: commonOptions
+        });
+
+        // 3. Income Chart (Doughnut)
+        new Chart(document.getElementById('incomeChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['200만 미만', '200~400만', '400~500만', '500만 이상'],
+                datasets: [{
+                    data: [13.5, 55.7, 18.3, 12.6],
+                    backgroundColor: ['#ff4757', '#ffa502', '#2ed573', '#1e90ff'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'right', labels: { color: 'white' } } }
+            }
+        });
+
+        // 4. Social Radar Chart
+        new Chart(document.getElementById('socialRadarChart'), {
+            type: 'radar',
+            data: {
+                labels: ['언어 문제', '편견/차별', '주거 문제', '문화 차이'],
+                datasets: [{
+                    label: '갈등 경험 (점수)',
+                    data: [4.2, 3.7, 3.0, 2.9],
+                    backgroundColor: 'rgba(255, 159, 67, 0.4)',
+                    borderColor: '#ff9f43',
+                    pointBackgroundColor: '#fff'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        grid: { color: 'rgba(255,255,255,0.2)' },
+                        angleLines: { color: 'rgba(255,255,255,0.2)' },
+                        pointLabels: { color: 'white', font: { size: 12 } },
+                        suggestedMin: 0,
+                        suggestedMax: 5
+                    }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>
